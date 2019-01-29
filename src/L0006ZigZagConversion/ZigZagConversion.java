@@ -1,3 +1,5 @@
+package L0006ZigZagConversion;
+
 import java.util.ArrayList;
 import java.util.List;
 

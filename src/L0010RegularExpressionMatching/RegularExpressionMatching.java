@@ -1,3 +1,5 @@
+package L0010RegularExpressionMatching;
+
 public class RegularExpressionMatching {
     public boolean isMatch(String s, String p) {
         // p的长度为0，说明匹配结束，若s也未空，匹配成功，否则失败
