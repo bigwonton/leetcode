@@ -1,6 +1,6 @@
 package L0004MedianofTwoSortedArrays;
 
-public class MedianOfTwoSortedArrays {
+public class Solution {
 
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int m = nums1.length;
@@ -45,7 +45,7 @@ public class MedianOfTwoSortedArrays {
     public static void main(String[] args) {
         int[] nums1 = new int[] {1,3};
         int[] nums2 = new int[] {2};
-        MedianOfTwoSortedArrays test = new MedianOfTwoSortedArrays();
+        Solution test = new Solution();
         System.out.println(test.findMedianSortedArrays(nums1, nums2));
     }
 }

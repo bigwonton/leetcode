@@ -1,6 +1,6 @@
 package L0007ReverseInteger;
 
-public class ReverseInteger {
+public class Solution {
     public int reverse(int x) {
         int rev = 0;
         while (x != 0) {

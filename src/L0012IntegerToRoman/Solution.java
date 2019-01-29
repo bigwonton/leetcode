@@ -1,6 +1,6 @@
 package L0012IntegerToRoman;
 
-public class IntegerToRoman {
+public class Solution {
     public String intToRoman(int num) {
         String res = "";
         char[] roman = {'M', 'D', 'C', 'L', 'X', 'V', 'I'};

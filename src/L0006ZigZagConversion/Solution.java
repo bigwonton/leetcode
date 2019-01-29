@@ -3,7 +3,7 @@ package L0006ZigZagConversion;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ZigZagConversion {
+public class Solution {
     public String convert(String s, int numRows) {
         if (numRows == 1) return s;
         List<StringBuilder> rows = new ArrayList<StringBuilder>();

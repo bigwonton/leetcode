@@ -1,6 +1,6 @@
 package L0009PalindromeNumber;
 
-public class PalindromeNumber {
+public class Solution {
     public boolean isPalindrome(int x) {
         if (x < 0 || (x % 10 == 0 && x != 0)) {
             return false;
@@ -17,7 +17,7 @@ public class PalindromeNumber {
 
     public static void main(String[] args) {
         int x = 123;
-        PalindromeNumber test = new PalindromeNumber();
+        Solution test = new Solution();
         boolean res =  test.isPalindrome(x);
         System.out.println(res);
     }

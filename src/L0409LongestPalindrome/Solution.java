@@ -2,7 +2,7 @@ package L0409LongestPalindrome;
 
 import java.util.Arrays;
 
-public class LongestPalindrome {
+public class Solution {
     public String longestPalindrome(String s) {
         if (s == null || s.length() == 0) {
             return "";
@@ -51,7 +51,7 @@ public class LongestPalindrome {
 
     public static void main(String[] args) {
         String str1 = "bb";
-        LongestPalindrome test = new LongestPalindrome();
+        Solution test = new Solution();
         System.out.println(test.longestPalindrome(str1));
     }
 }

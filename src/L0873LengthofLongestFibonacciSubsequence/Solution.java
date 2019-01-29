@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Set;
 
 // 3 无重复字符的最长子串
-public class lengthOfLongestSubstring {
+public class Solution {
     // 暴力法，会超时，时间复杂度O(n^3)
     public int lengthOfLongestSubstring(String s) {
         int n = s.length();
