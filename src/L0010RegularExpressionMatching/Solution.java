@@ -1,31 +1,27 @@
 package L0010RegularExpressionMatching;
 
 public class Solution {
+    // 对pattern进行分析
     public boolean isMatch(String s, String p) {
-        // p的长度为0，说明匹配结束，若s也未空，匹配成功，否则失败
+        // case 1. pattern长度为0
         if (p.length() == 0) {
             return s.length() == 0;
         }
-
-        // 若p的长度为1，那么就匹配单个字符。
-        // 若p的长度不为1，且第二个字符不为*，那么就匹配单个字符，然后分别去掉s和p的首字符，继续匹配。
-        if (p.length() == 1 || p.charAt(1) != '*') {
-            if (s.length() != 0 && (s.charAt(0) == p.charAt(0) || p.charAt(0) == '.')) {
-                return isMatch(s.substring(1), p.substring(1));
-            } else {
-                return false;
-            }
+        // case2 pattern 长度不为0
+        // case2.1 string长度为0    false
+        // case2.2 string长度不为0 匹配第一个字符
+        // case2.2.1 无特殊字符，直接比较
+        // case2.2.2 pattern第一个字符为.     true
+        boolean firstMatch = s.length() > 0 && (s.charAt(0) == p.charAt(0) || p.charAt(0) == '.');
+        //  case2.2.3 pattern长度大于1，且第2个字符为*
+        // case2.2.3.1 *前面的字符匹配0次
+        // case2.2.3.2 *前面的字符匹配大于0次
+        if (p.length() >= 2 && p.charAt(1) == '*') {
+            return isMatch(s, p.substring(2)) || (firstMatch && isMatch(s.substring(1), p));
         }
-        // p的首字符和s的首字符匹配上了，但也不知道这个*前面的字符重复多少次（可能为0~任意数），于是，用s匹配 刚刚匹配上的p的首字符和第二个字符*
-        // 如果去掉这一部分，后面匹配上了，说明这个*前面的字符重复0次
-        // 如果没匹配上，那就去掉s的首字符，再重试，如果有一次匹配上了，此时就整体匹配上了。递归结束的条件是——s的首字符和p的首字符匹配失败。
-        while (s.length() != 0 && (s.charAt(0) == p.charAt(0) || p.charAt(0) == '.')) {
-              if (isMatch(s, p.substring(2))) {
-                  return true;
-              }
-              s = s.substring(1);
+        // 正常匹配，各自往后移一位
+        else {
+            return firstMatch && isMatch(s.substring(1), p.substring(1));
         }
-        // p的首字符和s的首字符没有匹配上，去掉p的首字符和第二个字符*，再匹配
-        return isMatch(s, p.substring(2));
     }
 }
