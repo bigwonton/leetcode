@@ -3,7 +3,7 @@ package zuochengyun.Ch01StackAndQueue.P05;
 import java.util.Stack;
 
 /**
- * 用一个栈实现另一个栈的排®序
+ * 用一个栈实现另一个栈的排序
  */
 public class SortStack {
     public static void sortStackByStack(Stack<Integer> stack) {
